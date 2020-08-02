@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Manager<GameManager>
 {
@@ -29,6 +30,11 @@ public class GameManager : Manager<GameManager>
     // private void Start() {
     //     _points = 0 ;
     // }
+
+    public void ResetScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 
 }
 

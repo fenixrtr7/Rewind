@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class LevelManager : Manager<LevelManager>
 {
-    [SerializeField] GameObject[] keys;
+    [SerializeField] List<GameObject> keys = new List<GameObject>();
+    [SerializeField] GameObject goal;
     // Start is called before the first frame update
     void Start()
     {
-        keys = GameObject.FindGameObjectsWithTag("key");
+        goal = GameObject.FindGameObjectWithTag("goal");
+
+        foreach(GameObject key in GameObject.FindGameObjectsWithTag("key")) {
+             keys.Add(key);
+         }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void GetKey(GameObject key)
+    {
+        keys.Remove(key);
+
+        if (keys.Count == 0)
+        {
+            goal.GetComponent<Goal>().OnGoal();
+        }
     }
 }

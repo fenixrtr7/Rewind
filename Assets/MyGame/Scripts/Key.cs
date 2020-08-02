@@ -19,8 +19,9 @@ public class Key : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.name == "Player")
         {
-            Debug.Log("Chocamos");
-            Destroy(gameObject);
+            //Debug.Log("Chocamos");
+            LevelManager.Instance.GetKey(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
