@@ -1,0 +1,2 @@
+
+- Cambio de escena al tocar la meta

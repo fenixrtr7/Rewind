@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Manager<GameManager>
 {
+    public int currentLevel = 1;
     // public enum GameState
     // {
     //     PREGAME,
@@ -27,13 +28,25 @@ public class GameManager : Manager<GameManager>
     //     set { _points = value; }
     // }
 
-    // private void Start() {
-    //     _points = 0 ;
-    // }
+    private void Start() {
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        currentLevel = SceneManager.GetActiveScene().buildIndex;
+    }
 
-    public void ResetScene(string name)
+    public void ChangeScene(string name)
     {
         SceneManager.LoadScene(name);
+    }
+
+    public void ChangeScene(int num)
+    {
+        SceneManager.LoadScene(num);
+    }
+
+    public void NextLevel()
+    {
+        currentLevel++;
+        ChangeScene(currentLevel);
     }
 
 }

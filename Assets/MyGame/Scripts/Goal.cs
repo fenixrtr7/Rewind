@@ -15,4 +15,11 @@ public class Goal : MonoBehaviour
         box.enabled = true;
         mesh.enabled = true;
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.name == "Player")
+        {
+            GameManager.Instance.NextLevel();
+        }
+    }
 }
