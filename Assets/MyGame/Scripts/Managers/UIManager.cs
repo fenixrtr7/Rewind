@@ -7,6 +7,7 @@ public class UIManager : Manager<UIManager>
 {
     [SerializeField] Button reset;
     [SerializeField] Button play;
+    [SerializeField] GameObject panelWin;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +28,8 @@ public class UIManager : Manager<UIManager>
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void WinPanel()
     {
-        
+        panelWin.SetActive(true);
     }
 }

@@ -7,32 +7,34 @@ using System;
 public class GameManager : Manager<GameManager>
 {
     public int currentLevel = 1;
-    // public enum GameState
-    // {
-    //     PREGAME,
-    //     RUNNING,
-    //     PAUSED,
-    //     POSTGAME
-    // }
+    public enum GameState
+    {
+        PREGAME,
+        RUNNING,
+        PAUSED,
+        WINGAME
+    }
 
-    // GameState _currentGameState = GameState.PREGAME;
+    GameState _currentGameState = GameState.PREGAME;
 
-    // public GameState CurrentGameState
-    // {
-    //     get { return _currentGameState; }
-    //     set { _currentGameState = value; }
+    public GameState CurrentGameState
+    {
+        get { return _currentGameState; }
+        set { _currentGameState = value; }
 
     // private int _points;
     // public int Points
     // {
     //     get { return _points; }
     //     set { _points = value; }
-    // }
+    }
 
-    private void Start() {
-        //Debug.Log(SceneManager.GetActiveScene().buildIndex);
+    private void Start()
+    {
+        //Debug.Log("Number of scenes: " + SceneManager.sceneCountInBuildSettings);
 
         DontDestroyOnLoad(gameObject);
+
 
         currentLevel = SceneManager.GetActiveScene().buildIndex;
     }
@@ -49,8 +51,16 @@ public class GameManager : Manager<GameManager>
 
     public void NextLevel()
     {
-        currentLevel++;
-        ChangeScene(currentLevel);
+        if (SceneManager.sceneCountInBuildSettings >= currentLevel)
+        {
+            // Win
+        }
+        else
+        {
+            currentLevel++;
+            ChangeScene(currentLevel);
+        }
+
     }
 
     public void ResetLevel()
