@@ -9,11 +9,7 @@ public class LevelManager : Manager<LevelManager>
     // Start is called before the first frame update
     void Start()
     {
-        goal = GameObject.FindGameObjectWithTag("goal");
-
-        foreach(GameObject key in GameObject.FindGameObjectsWithTag("key")) {
-             keys.Add(key);
-         }
+        PhaseInitial();
     }
 
     // Update is called once per frame
@@ -30,5 +26,14 @@ public class LevelManager : Manager<LevelManager>
         {
             goal.GetComponent<Goal>().OnGoal();
         }
+    }
+
+    public void PhaseInitial()
+    {
+        goal = GameObject.FindGameObjectWithTag("goal");
+
+        foreach(GameObject key in GameObject.FindGameObjectsWithTag("key")) {
+             keys.Add(key);
+         }
     }
 }

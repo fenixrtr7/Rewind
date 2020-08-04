@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : Manager<GameManager>
 {
@@ -29,7 +30,10 @@ public class GameManager : Manager<GameManager>
     // }
 
     private void Start() {
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        //Debug.Log(SceneManager.GetActiveScene().buildIndex);
+
+        DontDestroyOnLoad(gameObject);
+
         currentLevel = SceneManager.GetActiveScene().buildIndex;
     }
 
@@ -49,5 +53,9 @@ public class GameManager : Manager<GameManager>
         ChangeScene(currentLevel);
     }
 
+    public void ResetLevel()
+    {
+        ChangeScene(currentLevel);
+    }
 }
 

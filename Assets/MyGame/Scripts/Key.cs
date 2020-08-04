@@ -7,16 +7,17 @@ public class Key : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        transform.Rotate(0, 0, 50 * Time.deltaTime); //rotates 50 degrees per second around z axis
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other)
+    {
         if (other.gameObject.name == "Player")
         {
             //Debug.Log("Chocamos");
