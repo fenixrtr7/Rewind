@@ -5138,7 +5138,7 @@ GameObject:
   - component: {fileID: 860696527}
   - component: {fileID: 860696526}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Panel_Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9752,6 +9752,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 0
+  OnGameStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1598491571
 Transform:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class UIManager : Manager<UIManager>
     {
         if (play != null)
         {
-            play.onClick.AddListener(delegate() { GameManager.Instance.NextLevel(); });
+            play.onClick.AddListener(delegate() { GameManager.Instance.StarGame(); });
         }else
         {
             Debug.Log("I don't have button play");

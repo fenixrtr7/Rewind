@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 using System;
 
 public class GameManager : Manager<GameManager>
@@ -9,13 +10,16 @@ public class GameManager : Manager<GameManager>
     public int currentLevel = 1;
     public enum GameState
     {
-        PREGAME,
+        MENU,
         RUNNING,
         PAUSED,
-        WINGAME
+        GAMEOVER
     }
 
-    GameState _currentGameState = GameState.PREGAME;
+    public Events.EventGameState OnGameStateChanged;
+
+    GameState _currentGameState = GameState.MENU;
+    int numberScenes;
 
     public GameState CurrentGameState
     {
@@ -37,6 +41,60 @@ public class GameManager : Manager<GameManager>
 
 
         currentLevel = SceneManager.GetActiveScene().buildIndex;
+        numberScenes = SceneManager.sceneCountInBuildSettings - 1;
+    }
+
+    public void StarGame()
+    {
+        UpdateState(GameState.RUNNING);
+        NextLevel();
+    }
+
+
+    public void GameOver()
+    {
+        UpdateState(GameState.GAMEOVER);
+    }
+
+    public void TogglePause()
+    {
+        UpdateState(_currentGameState == GameState.RUNNING ? GameState.PAUSED : GameState.RUNNING);
+    }
+
+    public void RestartGame()
+    {
+        UpdateState(GameState.MENU);
+    }
+
+    // Cambiar estado de juego
+    void UpdateState(GameState state)
+    {
+        GameState previousGameState = _currentGameState;
+        _currentGameState = state;
+
+        switch (_currentGameState)
+        {
+            case GameState.MENU:
+                Time.timeScale = 1.0f;
+                break;
+
+            case GameState.RUNNING:
+                Time.timeScale = 1.0f;
+                break;
+
+            case GameState.PAUSED:
+                Time.timeScale = 0.0f;
+                break;
+
+            case GameState.GAMEOVER:
+                Time.timeScale = 1.0f;
+                break;
+
+            default:
+                break;
+        }
+
+        OnGameStateChanged.Invoke(_currentGameState, previousGameState);
     }
 
     public void ChangeScene(string name)
@@ -51,9 +109,14 @@ public class GameManager : Manager<GameManager>
 
     public void NextLevel()
     {
-        if (SceneManager.sceneCountInBuildSettings >= currentLevel)
+        int numberScenes = SceneManager.sceneCountInBuildSettings - 1;
+        if (numberScenes == currentLevel)
         {
             // Win
+            //Debug.Log("win");
+            currentLevel = 0;
+            RestartGame();
+            ChangeScene(currentLevel);
         }
         else
         {

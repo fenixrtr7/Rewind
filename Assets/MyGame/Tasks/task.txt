@@ -1,7 +1,7 @@
 
 
-- *Poniendo los estados en GameManager
 
-- ultimo nivel si lo tocas ganas
 
 - level 3 que la camara siga al jugador
+
+- Mas estetico
