@@ -6,14 +6,24 @@ using UnityEngine.UI;
 public class UIManager : Manager<UIManager>
 {
     [SerializeField] Button reset;
-    [SerializeField] Button play;
+    [SerializeField] Button playGame;
+    [Header("Controls")]
+    [SerializeField] Button record;
+    [SerializeField] Button pause;
+    [SerializeField] Button rewind;
+    [SerializeField] Button stop;
+    [Header("Panels")]
     [SerializeField] GameObject panelWin;
+    [SerializeField] GameObject panelControls;
+    [SerializeField] GameObject panelMenu;
     // Start is called before the first frame update
     void Start()
     {
-        if (play != null)
+        DontDestroyOnLoad(gameObject);
+
+        if (playGame != null)
         {
-            play.onClick.AddListener(delegate() { GameManager.Instance.StarGame(); });
+            playGame.onClick.AddListener(delegate() { GameManager.Instance.StarGame(); });
         }else
         {
             Debug.Log("I don't have button play");
@@ -26,6 +36,17 @@ public class UIManager : Manager<UIManager>
         {
             Debug.Log("I don't have button reset");
         }
+
+        record.onClick.AddListener(delegate() { GameManager.Instance.ResetLevel(); });
+        pause.onClick.AddListener(delegate() { GameManager.Instance.ResetLevel(); });
+        rewind.onClick.AddListener(delegate() { GameManager.Instance.ResetLevel(); });
+        stop.onClick.AddListener(delegate() { GameManager.Instance.ResetLevel(); });
+    }
+
+    public void ActivePanelControls()
+    {
+        panelControls.SetActive(true);
+        panelMenu.SetActive(false);
     }
 
     public void WinPanel()

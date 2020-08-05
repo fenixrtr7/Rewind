@@ -47,6 +47,7 @@ public class GameManager : Manager<GameManager>
     public void StarGame()
     {
         UpdateState(GameState.RUNNING);
+        UIManager.Instance.ActivePanelControls();
         NextLevel();
     }
 

@@ -2,6 +2,6 @@
 
 
 
-- level 3 que la camara siga al jugador
+- Controles mejora
 
 - Mas estetico
