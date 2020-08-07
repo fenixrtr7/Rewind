@@ -34,6 +34,8 @@ public class LevelManager : Manager<LevelManager>
 
         foreach(GameObject key in GameObject.FindGameObjectsWithTag("key")) {
              keys.Add(key);
-         }
+        }
+
+        RecPlay.Instance.ChangeState(3);
     }
 }

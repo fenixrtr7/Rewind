@@ -2,6 +2,6 @@
 
 
 
-- Controles mejora
+- On win and send menu
 
 - Mas estetico

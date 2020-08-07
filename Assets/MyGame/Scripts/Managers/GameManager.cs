@@ -42,7 +42,7 @@ public class GameManager : Manager<GameManager>
         currentLevel = SceneManager.GetActiveScene().buildIndex;
         numberScenes = SceneManager.sceneCountInBuildSettings - 1;
 
-        Debug.Log("number Scenes: " + numberScenes + "current Level: " + currentLevel);
+        //Debug.Log("number Scenes: " + numberScenes + "current Level: " + currentLevel);
     }
 
     public void StarGame()
@@ -63,7 +63,7 @@ public class GameManager : Manager<GameManager>
         UpdateState(_currentGameState == GameState.RUNNING ? GameState.PAUSED : GameState.RUNNING);
     }
 
-    public void RestartGame()
+    public void GoMenu()
     {
         UpdateState(GameState.MENU);
     }
@@ -111,15 +111,17 @@ public class GameManager : Manager<GameManager>
 
     public void NextLevel()
     {
-        Debug.Log("number Scenes: " + numberScenes + "current Level: " + currentLevel);
+        //Debug.Log("number Scenes: " + numberScenes + "current Level: " + currentLevel);
 
         if (numberScenes == currentLevel)
         {
+            StartCoroutine(UIManager.Instance.WinPanel());
             // Win
-            Debug.Log("win");
+            //Debug.Log("win");
             currentLevel = 0;
-            RestartGame();
+            GoMenu();
             ChangeScene(currentLevel);
+            // On win and send menu
         }
         else
         {

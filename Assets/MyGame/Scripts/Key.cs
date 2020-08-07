@@ -20,7 +20,7 @@ public class Key : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            Debug.Log("Chocamos");
+            //Debug.Log("Chocamos");
             LevelManager.Instance.GetKey(gameObject);
             gameObject.SetActive(false);
         }

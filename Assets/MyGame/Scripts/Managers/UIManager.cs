@@ -49,8 +49,18 @@ public class UIManager : Manager<UIManager>
         panelMenu.SetActive(false);
     }
 
-    public void WinPanel()
+    public IEnumerator WinPanel()
     {
         panelWin.SetActive(true);
+        panelControls.SetActive(false);
+        yield return new WaitForSeconds(5f);
+        panelWin.SetActive(false);
+        StartCoroutine(BackMenu());
+    }
+
+    public IEnumerator BackMenu()
+    {
+        panelMenu.SetActive(true);
+        yield return null;
     }
 }
