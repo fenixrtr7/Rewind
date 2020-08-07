@@ -234,7 +234,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5261195350511261823}
         m_MethodName: ChangeState
         m_Mode: 3
         m_Arguments:
@@ -598,7 +598,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5261195350511261823}
         m_MethodName: ChangeState
         m_Mode: 3
         m_Arguments:
@@ -728,7 +728,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5261195350511261823}
         m_MethodName: ChangeState
         m_Mode: 3
         m_Arguments:
@@ -1013,7 +1013,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reset: {fileID: 6557138128010972462}
-  play: {fileID: 6557138128018819615}
+  playGame: {fileID: 6557138128018819615}
+  record: {fileID: 0}
+  pause: {fileID: 0}
+  rewind: {fileID: 0}
+  stop: {fileID: 0}
   panelWin: {fileID: 0}
   panelControls: {fileID: 6557138127645150826}
   panelMenu: {fileID: 6557138127946300514}
@@ -1136,7 +1140,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5261195350511261823}
         m_MethodName: ChangeState
         m_Mode: 3
         m_Arguments:
@@ -1267,7 +1271,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: ChangeState
+        m_MethodName: 
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -3406,7 +3406,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391864747}
   m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: -5.9999995, y: 8.420201, z: -12.396927}
+  m_LocalPosition: {x: -6, y: 8.420201, z: -12.396927}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1193071193}
@@ -5891,8 +5891,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reset: {fileID: 929439360}
-  play: {fileID: 0}
+  playGame: {fileID: 0}
+  record: {fileID: 0}
+  pause: {fileID: 0}
+  rewind: {fileID: 0}
+  stop: {fileID: 0}
   panelWin: {fileID: 0}
+  panelControls: {fileID: 0}
+  panelMenu: {fileID: 0}
 --- !u!1001 &680969748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6333,7 +6339,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770734411}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeState
         m_Mode: 3
         m_Arguments:
@@ -6904,7 +6910,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770734411}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeState
         m_Mode: 3
         m_Arguments:
@@ -8559,7 +8565,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951676544}
   m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: -5.9999995, y: 8.420201, z: -12.396927}
+  m_LocalPosition: {x: -6, y: 8.420201, z: -12.396927}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -15344,7 +15350,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1770734412}
-  - component: {fileID: 1770734411}
   - component: {fileID: 1770734413}
   m_Layer: 0
   m_Name: LevelManager
@@ -15353,19 +15358,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1770734411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770734410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 242929be0d940aa4e9a9f7498faa99e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recordables: []
 --- !u!4 &1770734412
 Transform:
   m_ObjectHideFlags: 0
@@ -16043,7 +16035,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770734411}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeState
         m_Mode: 3
         m_Arguments:
@@ -17009,7 +17001,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770734411}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeState
         m_Mode: 3
         m_Arguments:
@@ -17328,7 +17320,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770734411}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeState
         m_Mode: 3
         m_Arguments:

@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        RecPlay.Instance.IniGame();
     }
 
     void FixedUpdate()

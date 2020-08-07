@@ -39,9 +39,10 @@ public class GameManager : Manager<GameManager>
 
         DontDestroyOnLoad(gameObject);
 
-
         currentLevel = SceneManager.GetActiveScene().buildIndex;
         numberScenes = SceneManager.sceneCountInBuildSettings - 1;
+
+        Debug.Log("number Scenes: " + numberScenes + "current Level: " + currentLevel);
     }
 
     public void StarGame()
@@ -110,11 +111,12 @@ public class GameManager : Manager<GameManager>
 
     public void NextLevel()
     {
-        int numberScenes = SceneManager.sceneCountInBuildSettings - 1;
+        Debug.Log("number Scenes: " + numberScenes + "current Level: " + currentLevel);
+
         if (numberScenes == currentLevel)
         {
             // Win
-            //Debug.Log("win");
+            Debug.Log("win");
             currentLevel = 0;
             RestartGame();
             ChangeScene(currentLevel);

@@ -37,10 +37,10 @@ public class UIManager : Manager<UIManager>
             Debug.Log("I don't have button reset");
         }
 
-        record.onClick.AddListener(delegate() { GameManager.Instance.ResetLevel(); });
-        pause.onClick.AddListener(delegate() { GameManager.Instance.ResetLevel(); });
-        rewind.onClick.AddListener(delegate() { GameManager.Instance.ResetLevel(); });
-        stop.onClick.AddListener(delegate() { GameManager.Instance.ResetLevel(); });
+        // record.onClick.AddListener(delegate() { GameManager.Instance.ResetLevel(); });
+        // pause.onClick.AddListener(delegate() { GameManager.Instance.ResetLevel(); });
+        // rewind.onClick.AddListener(delegate() { GameManager.Instance.ResetLevel(); });
+        // stop.onClick.AddListener(delegate() { GameManager.Instance.ResetLevel(); });
     }
 
     public void ActivePanelControls()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecPlay : MonoBehaviour
+public class RecPlay : Manager<RecPlay>
 {
 
     List<Vector3> vectors = new List<Vector3>();
@@ -23,6 +23,11 @@ public class RecPlay : MonoBehaviour
     void Start()
     {
 
+        
+    }
+
+    public void IniGame()
+    {
         recordables = GameObject.FindGameObjectsWithTag("Recordable");
 
         gvectors = new List<Vector3>[recordables.Length];
