@@ -15,7 +15,30 @@ public class LevelManager : Manager<LevelManager>
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            RecPlay.Instance.ChangeState(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            RecPlay.Instance.ChangeState(4);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            RecPlay.Instance.ChangeState(5);
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            RecPlay.Instance.ChangeState(3);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameManager.Instance.ResetLevel();
+        }
     }
 
     public void GetKey(GameObject key)
